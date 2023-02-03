@@ -25,32 +25,27 @@ function readLine() {
   return inputString[currentLine++];
 }
 
-function getLetter(s) {
-  let letter;
-  // Write your code here
-  switch (s.charAt(0)) {
-    case "a" || "e" || "o" || "i" || "u":
-      letter = "A";
-      break;
+/*
+ * Complete the vowelsAndConsonants function.
+ * Print your output using 'console.log()'.
+ */
+function vowelsAndConsonants(s) {
+  var vowel = ["a", "e", "i", "o", "u"];
 
-    case "b" || "c" || "d" || "f" || "g":
-      letter = "B";
-      break;
-
-    case "h" || "j" || "k" || "l" || "m":
-      letter = "C";
-      break;
-
-    default:
-      letter = "D";
-      break;
+  for (let i = 0; i < s.length; i++) {
+    if (vowel.indexOf(s[i]) > -1) {
+      console.log(s[i]);
+    }
   }
-
-  return letter;
+  for (let i = 0; i < s.length; i++) {
+    if (vowel.indexOf(s[i]) < 0) {
+      console.log(s[i]);
+    }
+  }
 }
 
 function main() {
   const s = readLine();
 
-  console.log(getLetter(s));
+  vowelsAndConsonants(s);
 }
